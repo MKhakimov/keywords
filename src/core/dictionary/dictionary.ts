@@ -71,6 +71,10 @@ export class Dictionary {
     return masks;
   }
 
+  entries(): DictionaryEntry[] {
+    return [...this.lookup.values()];
+  }
+
   has(word: string): boolean {
     return this.lookup.has(word);
   }
