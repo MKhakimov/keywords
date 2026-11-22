@@ -1,0 +1,170 @@
+@use '../styles/tokens' as *;
+
+.form {
+  display: grid;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.group {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 16px 16px;
+  border: 1px solid $app-border;
+  border-radius: $radius;
+  background: $app-surface;
+
+  legend {
+    padding: 0 6px;
+    font-weight: 700;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+
+  > span:first-child {
+    color: $app-muted;
+    font-size: 13px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 7px 9px;
+    border: 1px solid $app-border;
+    border-radius: $radius;
+    background: #fff;
+    color: $app-text;
+
+    &:focus-visible {
+      outline: 2px solid $app-accent;
+      outline-offset: 1px;
+    }
+
+    &[aria-invalid='true'] {
+      border-color: $app-accent;
+    }
+  }
+
+  input[type='file'] {
+    padding: 5px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  small {
+    color: $app-muted;
+    font-size: 12px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+
+  @media (width <= 560px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.seed {
+  display: flex;
+  gap: 6px;
+
+  button {
+    flex: none;
+    width: 38px;
+    border: 1px solid $app-border;
+    border-radius: $radius;
+    background: $app-surface;
+    cursor: pointer;
+  }
+}
+
+.illustration {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+
+  img {
+    width: 100%;
+    aspect-ratio: 7 / 5;
+    object-fit: cover;
+    border: 1px solid $app-border;
+    border-radius: $radius;
+  }
+
+  @media (width <= 560px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.illustrationControls {
+  display: grid;
+  gap: 10px;
+
+  > button {
+    justify-self: start;
+    padding: 6px 12px;
+    border: 1px solid $app-border;
+    border-radius: $radius;
+    background: $app-surface;
+    cursor: pointer;
+  }
+
+  small {
+    color: $app-muted;
+    font-size: 12px;
+  }
+}
+
+.error {
+  color: $app-accent;
+  font-size: 12px;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+}
+
+.submit {
+  justify-self: start;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: $radius;
+  background: $app-accent;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $app-text;
+    outline-offset: 2px;
+  }
+}
+
+.failure {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid $app-accent;
+  border-radius: $radius;
+  background: #fff1f0;
+  color: $app-accent;
+  font-size: 14px;
+}

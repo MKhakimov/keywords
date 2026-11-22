@@ -1,0 +1,77 @@
+@use '../styles/tokens' as *;
+
+.grid {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.cell {
+  fill: $color-cell;
+  stroke: $color-grid-line;
+  stroke-width: 1.2;
+}
+
+.block {
+  fill: $color-block;
+  stroke: $color-grid-line;
+  stroke-width: 1.2;
+}
+
+.answer {
+  fill: $color-answer;
+}
+
+.sameNumber {
+  fill: $color-same-number;
+}
+
+.word {
+  fill: $color-word;
+}
+
+.selected {
+  fill: $color-select;
+}
+
+.wrong {
+  fill: $color-wrong;
+}
+
+.number {
+  font-family: $font-body;
+  font-size: 10.5px;
+  fill: $color-ink;
+  pointer-events: none;
+}
+
+.letter {
+  font-family: $font-body;
+  font-size: 24px;
+  font-weight: 700;
+  text-anchor: middle;
+  fill: #1f3f8f;
+  pointer-events: none;
+}
+
+.given {
+  fill: $color-heading;
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+@media print {
+  .sameNumber,
+  .word,
+  .selected,
+  .wrong {
+    fill: $color-cell;
+  }
+
+  .answer {
+    fill: $color-answer;
+  }
+}
