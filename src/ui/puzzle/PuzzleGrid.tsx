@@ -1,7 +1,8 @@
 import { useId, useMemo } from 'react';
 import type { Direction } from '../../core/grid/types.ts';
 import type { PlayView } from '../../core/puzzle/views.ts';
-import { CELL, voidBox, wordCells } from './gridGeometry.ts';
+import type { LetterMode } from './gridGeometry.ts';
+import { CELL, displayedLetter, voidBox, wordCells } from './gridGeometry.ts';
 import { KeyIcon } from './KeyIcon.tsx';
 import styles from './PuzzleGrid.module.scss';
 
@@ -13,6 +14,7 @@ export interface PuzzleGridProps {
   readonly direction?: Direction;
   readonly wrongNumbers?: ReadonlySet<number>;
   readonly noticeNumbers?: ReadonlySet<number>;
+  readonly letterMode?: LetterMode;
   readonly onCellClick?: (index: number) => void;
 }
 
@@ -26,6 +28,7 @@ export function PuzzleGrid({
   direction = 'across',
   wrongNumbers = EMPTY,
   noticeNumbers = EMPTY,
+  letterMode = 'by-number',
   onCellClick,
 }: PuzzleGridProps) {
   const clipId = useId();
@@ -79,7 +82,7 @@ export function PuzzleGrid({
         if (cell.kind === 'block') {
           return <rect key={index} className={styles.block} x={x} y={y} width={CELL} height={CELL} />;
         }
-        const letter = letters[cell.number];
+        const letter = displayedLetter(cell, letters, letterMode);
         const classes = [styles.cell];
         if (cell.answerPart !== undefined) classes.push(styles.answer);
         if (selectedNumber === cell.number) classes.push(styles.sameNumber);

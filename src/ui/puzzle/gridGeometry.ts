@@ -1,5 +1,5 @@
 import type { Direction } from '../../core/grid/types.ts';
-import type { PlayView } from '../../core/puzzle/views.ts';
+import type { PlayCell, PlayView } from '../../core/puzzle/views.ts';
 
 export const CELL = 40;
 
@@ -47,4 +47,14 @@ export function wordCells(view: PlayView, index: number, direction: Direction): 
     c += dc;
   }
   return result.length > 1 ? result : [index];
+}
+
+export type LetterMode = 'by-number' | 'starter-only';
+
+export function displayedLetter(
+  cell: Extract<PlayCell, { kind: 'letter' }>,
+  letters: Readonly<Record<number, string>>,
+  mode: LetterMode,
+): string | undefined {
+  return mode === 'starter-only' ? cell.given : letters[cell.number];
 }

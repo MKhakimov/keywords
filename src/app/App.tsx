@@ -41,7 +41,7 @@ function PrintablePage({ puzzle }: { readonly puzzle: Puzzle }) {
   return (
     <PuzzlePage
       view={view}
-      grid={<PuzzleGrid view={view} letters={givens} givenNumbers={givenNumbers} />}
+      grid={<PuzzleGrid view={view} letters={givens} givenNumbers={givenNumbers} letterMode="starter-only" />}
       keyStrip={<KeyStrip entries={view.key} letters={givens} givenNumbers={givenNumbers} />}
     />
   );
