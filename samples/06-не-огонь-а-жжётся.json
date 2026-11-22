@@ -1,0 +1,2211 @@
+{
+  "format": "keywords-export",
+  "version": 1,
+  "exportedAt": "2026-11-22T07:43:15.097Z",
+  "items": [
+    {
+      "puzzle": {
+        "schemaVersion": 1,
+        "meta": {
+          "id": "21837703-7618-4d0d-9971-6a63707825ae",
+          "title": "Не огонь, а жжётся",
+          "theme": "растения",
+          "difficulty": "medium",
+          "language": "ru",
+          "alphabet": "ru-32",
+          "seed": 1005,
+          "createdAt": "2026-11-22T07:43:15.097Z"
+        },
+        "editorial": {
+          "rubric": "Народная загадка",
+          "heading": "Не огонь, а жжётся",
+          "riddle": "Растёт у забора, жжётся без огня, а без перчаток её лучше не трогать. Что это?",
+          "explanation": "Из неё варят весенние щи, хотя собирать её — то ещё испытание.",
+          "answer": "крапива"
+        },
+        "illustration": {
+          "src": "/illustrations/06-крапива.jpg",
+          "alt": "Иллюстрация к загадке «Не огонь, а жжётся»",
+          "prompt": "",
+          "placeholder": false
+        },
+        "grid": {
+          "width": 18,
+          "height": 19,
+          "cells": [
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "letter",
+              "letter": "З",
+              "number": 19,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "letter",
+              "letter": "Л",
+              "number": 6,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ы",
+              "number": 8,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Г",
+              "number": 17,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Г",
+              "number": 17,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ь",
+              "number": 12,
+              "given": false
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "void"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ц",
+              "number": 13,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "П",
+              "number": 1,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Я",
+              "number": 15,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Г",
+              "number": 17,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Б",
+              "number": 9,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ш",
+              "number": 20,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "У",
+              "number": 21,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "У",
+              "number": 21,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false,
+              "answerPart": 1
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Ц",
+              "number": 13,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false,
+              "answerPart": 1
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ц",
+              "number": 13,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Л",
+              "number": 6,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Ш",
+              "number": 20,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "У",
+              "number": 21,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "П",
+              "number": 1,
+              "given": true
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": true
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": true
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": true
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": true,
+              "answerPart": 1
+            },
+            {
+              "kind": "letter",
+              "letter": "Л",
+              "number": 6,
+              "given": true
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "З",
+              "number": 19,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "З",
+              "number": 19,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "П",
+              "number": 1,
+              "given": false,
+              "answerPart": 1
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "У",
+              "number": 21,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ц",
+              "number": 13,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false,
+              "answerPart": 1
+            },
+            {
+              "kind": "letter",
+              "letter": "Я",
+              "number": 15,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "У",
+              "number": 21,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false,
+              "answerPart": 1
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Я",
+              "number": 15,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Б",
+              "number": 9,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ь",
+              "number": 12,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "П",
+              "number": 1,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false,
+              "answerPart": 1
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Л",
+              "number": 6,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Г",
+              "number": 17,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Б",
+              "number": 9,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ж",
+              "number": 11,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "У",
+              "number": 21,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "И",
+              "number": 10,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Л",
+              "number": 6,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "М",
+              "number": 24,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Р",
+              "number": 3,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Д",
+              "number": 16,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Г",
+              "number": 17,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Е",
+              "number": 23,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Т",
+              "number": 4,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "В",
+              "number": 7,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "О",
+              "number": 2,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "С",
+              "number": 14,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ь",
+              "number": 12,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "block"
+            },
+            {
+              "kind": "letter",
+              "letter": "Л",
+              "number": 6,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Ц",
+              "number": 13,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "К",
+              "number": 22,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "А",
+              "number": 5,
+              "given": false
+            },
+            {
+              "kind": "letter",
+              "letter": "Н",
+              "number": 18,
+              "given": false
+            }
+          ]
+        },
+        "words": [
+          {
+            "word": "ЗВОН",
+            "row": 0,
+            "col": 7,
+            "dir": "across"
+          },
+          {
+            "word": "КОДЕКС",
+            "row": 0,
+            "col": 12,
+            "dir": "across"
+          },
+          {
+            "word": "ЛЫКО",
+            "row": 1,
+            "col": 7,
+            "dir": "across"
+          },
+          {
+            "word": "ОДА",
+            "row": 1,
+            "col": 14,
+            "dir": "across"
+          },
+          {
+            "word": "ОГОРОД",
+            "row": 2,
+            "col": 7,
+            "dir": "across"
+          },
+          {
+            "word": "ГАРЬ",
+            "row": 2,
+            "col": 14,
+            "dir": "across"
+          },
+          {
+            "word": "ОВЦА",
+            "row": 4,
+            "col": 7,
+            "dir": "across"
+          },
+          {
+            "word": "ПИВНАЯ",
+            "row": 4,
+            "col": 12,
+            "dir": "across"
+          },
+          {
+            "word": "НОС",
+            "row": 5,
+            "col": 4,
+            "dir": "across"
+          },
+          {
+            "word": "ОСОБА",
+            "row": 6,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "МАРШРУТ",
+            "row": 6,
+            "col": 6,
+            "dir": "across"
+          },
+          {
+            "word": "РУКА",
+            "row": 6,
+            "col": 14,
+            "dir": "across"
+          },
+          {
+            "word": "МОР",
+            "row": 7,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "ИНИЦИАЛ",
+            "row": 8,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "ШОУ",
+            "row": 8,
+            "col": 8,
+            "dir": "across"
+          },
+          {
+            "word": "ПОРТАЛ",
+            "row": 8,
+            "col": 12,
+            "dir": "across"
+          },
+          {
+            "word": "ДНО",
+            "row": 10,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "МУСОР",
+            "row": 10,
+            "col": 4,
+            "dir": "across"
+          },
+          {
+            "word": "ДИРЕКЦИЯ",
+            "row": 10,
+            "col": 10,
+            "dir": "across"
+          },
+          {
+            "word": "ОКТЯБРЬ",
+            "row": 12,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "НОСИК",
+            "row": 12,
+            "col": 8,
+            "dir": "across"
+          },
+          {
+            "word": "СПАС",
+            "row": 12,
+            "col": 14,
+            "dir": "across"
+          },
+          {
+            "word": "ОСА",
+            "row": 13,
+            "col": 10,
+            "dir": "across"
+          },
+          {
+            "word": "АКТ",
+            "row": 14,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "ОБИДА",
+            "row": 14,
+            "col": 4,
+            "dir": "across"
+          },
+          {
+            "word": "СКВАЖИНА",
+            "row": 14,
+            "col": 10,
+            "dir": "across"
+          },
+          {
+            "word": "КУМ",
+            "row": 15,
+            "col": 4,
+            "dir": "across"
+          },
+          {
+            "word": "РЕКЛАМА",
+            "row": 16,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "ОТСЕК",
+            "row": 16,
+            "col": 8,
+            "dir": "across"
+          },
+          {
+            "word": "НЕРВ",
+            "row": 16,
+            "col": 14,
+            "dir": "across"
+          },
+          {
+            "word": "СОК",
+            "row": 17,
+            "col": 8,
+            "dir": "across"
+          },
+          {
+            "word": "КОТ",
+            "row": 18,
+            "col": 0,
+            "dir": "across"
+          },
+          {
+            "word": "АВОСЬКА",
+            "row": 18,
+            "col": 4,
+            "dir": "across"
+          },
+          {
+            "word": "ЛАЦКАН",
+            "row": 18,
+            "col": 12,
+            "dir": "across"
+          },
+          {
+            "word": "КОМИ",
+            "row": 5,
+            "col": 0,
+            "dir": "down"
+          },
+          {
+            "word": "ДРОВА",
+            "row": 10,
+            "col": 0,
+            "dir": "down"
+          },
+          {
+            "word": "РОК",
+            "row": 16,
+            "col": 0,
+            "dir": "down"
+          },
+          {
+            "word": "СОН",
+            "row": 6,
+            "col": 1,
+            "dir": "down"
+          },
+          {
+            "word": "ГОРИЗОНТ",
+            "row": 5,
+            "col": 2,
+            "dir": "down"
+          },
+          {
+            "word": "ТЕКСТ",
+            "row": 14,
+            "col": 2,
+            "dir": "down"
+          },
+          {
+            "word": "НАЦИЗМ",
+            "row": 5,
+            "col": 4,
+            "dir": "down"
+          },
+          {
+            "word": "БЛОКАДА",
+            "row": 12,
+            "col": 4,
+            "dir": "down"
+          },
+          {
+            "word": "БУМ",
+            "row": 14,
+            "col": 5,
+            "dir": "down"
+          },
+          {
+            "word": "СМЕЛОСТЬ",
+            "row": 5,
+            "col": 6,
+            "dir": "down"
+          },
+          {
+            "word": "ИМАГО",
+            "row": 14,
+            "col": 6,
+            "dir": "down"
+          },
+          {
+            "word": "ЗЛО",
+            "row": 0,
+            "col": 7,
+            "dir": "down"
+          },
+          {
+            "word": "ВЫГОВОР",
+            "row": 0,
+            "col": 8,
+            "dir": "down"
+          },
+          {
+            "word": "ШЕРЕНГА",
+            "row": 8,
+            "col": 8,
+            "dir": "down"
+          },
+          {
+            "word": "ОСЬ",
+            "row": 16,
+            "col": 8,
+            "dir": "down"
+          },
+          {
+            "word": "ОКО",
+            "row": 0,
+            "col": 9,
+            "dir": "down"
+          },
+          {
+            "word": "ТОК",
+            "row": 16,
+            "col": 9,
+            "dir": "down"
+          },
+          {
+            "word": "НОРМА",
+            "row": 0,
+            "col": 10,
+            "dir": "down"
+          },
+          {
+            "word": "РАУНД",
+            "row": 6,
+            "col": 10,
+            "dir": "down"
+          },
+          {
+            "word": "СОСИСКА",
+            "row": 12,
+            "col": 10,
+            "dir": "down"
+          },
+          {
+            "word": "ИСК",
+            "row": 12,
+            "col": 11,
+            "dir": "down"
+          },
+          {
+            "word": "КОД",
+            "row": 0,
+            "col": 12,
+            "dir": "down"
+          },
+          {
+            "word": "ПОТОП",
+            "row": 4,
+            "col": 12,
+            "dir": "down"
+          },
+          {
+            "word": "РУКАВ",
+            "row": 10,
+            "col": 12,
+            "dir": "down"
+          },
+          {
+            "word": "КОЛ",
+            "row": 16,
+            "col": 12,
+            "dir": "down"
+          },
+          {
+            "word": "ДОГОВОР",
+            "row": 0,
+            "col": 14,
+            "dir": "down"
+          },
+          {
+            "word": "РАК",
+            "row": 8,
+            "col": 14,
+            "dir": "down"
+          },
+          {
+            "word": "САЖЕНЕЦ",
+            "row": 12,
+            "col": 14,
+            "dir": "down"
+          },
+          {
+            "word": "ЕДА",
+            "row": 0,
+            "col": 15,
+            "dir": "down"
+          },
+          {
+            "word": "КАРМА",
+            "row": 0,
+            "col": 16,
+            "dir": "down"
+          },
+          {
+            "word": "КРАПИВА",
+            "row": 6,
+            "col": 16,
+            "dir": "down"
+          },
+          {
+            "word": "НАРТА",
+            "row": 14,
+            "col": 16,
+            "dir": "down"
+          }
+        ],
+        "answerParts": [
+          {
+            "text": "КРАПИВА",
+            "row": 6,
+            "col": 16,
+            "dir": "down",
+            "order": 1
+          }
+        ],
+        "cipher": [
+          {
+            "number": 1,
+            "letter": "П"
+          },
+          {
+            "number": 2,
+            "letter": "О"
+          },
+          {
+            "number": 3,
+            "letter": "Р"
+          },
+          {
+            "number": 4,
+            "letter": "Т"
+          },
+          {
+            "number": 5,
+            "letter": "А"
+          },
+          {
+            "number": 6,
+            "letter": "Л"
+          },
+          {
+            "number": 7,
+            "letter": "В"
+          },
+          {
+            "number": 8,
+            "letter": "Ы"
+          },
+          {
+            "number": 9,
+            "letter": "Б"
+          },
+          {
+            "number": 10,
+            "letter": "И"
+          },
+          {
+            "number": 11,
+            "letter": "Ж"
+          },
+          {
+            "number": 12,
+            "letter": "Ь"
+          },
+          {
+            "number": 13,
+            "letter": "Ц"
+          },
+          {
+            "number": 14,
+            "letter": "С"
+          },
+          {
+            "number": 15,
+            "letter": "Я"
+          },
+          {
+            "number": 16,
+            "letter": "Д"
+          },
+          {
+            "number": 17,
+            "letter": "Г"
+          },
+          {
+            "number": 18,
+            "letter": "Н"
+          },
+          {
+            "number": 19,
+            "letter": "З"
+          },
+          {
+            "number": 20,
+            "letter": "Ш"
+          },
+          {
+            "number": 21,
+            "letter": "У"
+          },
+          {
+            "number": 22,
+            "letter": "К"
+          },
+          {
+            "number": 23,
+            "letter": "Е"
+          },
+          {
+            "number": 24,
+            "letter": "М"
+          }
+        ],
+        "givens": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "progress": {},
+      "solved": false,
+      "createdAt": "2026-11-22T07:43:15.097Z"
+    }
+  ]
+}
