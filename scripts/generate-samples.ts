@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { RU_ALPHABET } from '../src/core/alphabet.ts';
 import { dictionaryFromFile } from '../src/core/dictionary/loader.ts';
@@ -203,11 +203,22 @@ const SAMPLES: readonly Sample[] = [
 
 const ROOT = resolve(import.meta.dirname, '..');
 const OUT = resolve(ROOT, 'samples');
+const ILLUSTRATIONS = resolve(ROOT, 'public/illustrations');
+
+async function illustrationFiles(): Promise<Map<number, string>> {
+  const files = new Map<number, string>();
+  for (const name of await readdir(ILLUSTRATIONS)) {
+    const match = /^(\d{2})-.+\.(jpe?g|png|webp)$/iu.exec(name.normalize('NFC'));
+    if (match) files.set(Number(match[1]), match[0]);
+  }
+  return files;
+}
 
 async function main(): Promise<void> {
   const raw: unknown = JSON.parse(await readFile(resolve(ROOT, 'public/dict/ru-nouns.v1.json'), 'utf8'));
   const dictionary = dictionaryFromFile(raw, RU_ALPHABET);
   await mkdir(OUT, { recursive: true });
+  const images = await illustrationFiles();
 
   let failures = 0;
   for (const [index, sample] of SAMPLES.entries()) {
@@ -227,12 +238,19 @@ async function main(): Promise<void> {
           explanation: sample.explanation,
           answer: sample.answer,
         },
-        illustration: {
-          src: '/illustrations/placeholder.png',
-          alt: 'Иллюстрация-заглушка: двое беседуют в комнате',
-          prompt: '',
-          placeholder: true,
-        },
+        illustration: images.has(index + 1)
+          ? {
+              src: `/illustrations/${images.get(index + 1)}`,
+              alt: `Иллюстрация к загадке «${sample.heading}»`,
+              prompt: '',
+              placeholder: false,
+            }
+          : {
+              src: '/illustrations/placeholder.png',
+              alt: 'Иллюстрация-заглушка: двое беседуют в комнате',
+              prompt: '',
+              placeholder: true,
+            },
       },
       { dictionary, alphabet: RU_ALPHABET },
     );
@@ -265,7 +283,9 @@ async function main(): Promise<void> {
     const fileName = `${number}-${exportFileName([record], now).replace(/^keywords-/, '').replace(/-\d{4}-\d{2}-\d{2}\.json$/, '')}.json`;
     await writeFile(resolve(OUT, fileName), text);
     const p = result.puzzle;
-    console.log(`${number} ${sample.difficulty.padEnd(6)} ${p.answerParts.map((a) => a.text).join(' ').padEnd(12)} слов ${p.words.length}, подсказок ${p.givens.length} → samples/${fileName}`);
+    console.log(
+      `${number} ${sample.difficulty.padEnd(6)} ${p.answerParts.map((a) => a.text).join(' ').padEnd(12)} слов ${p.words.length}, подсказок ${p.givens.length}, картинка ${p.illustration.src} → samples/${fileName}`,
+    );
   }
 
   if (failures > 0) {
