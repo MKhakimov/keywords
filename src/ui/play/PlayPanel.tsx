@@ -2,7 +2,7 @@ import type { KeyboardEvent } from 'react';
 import { useEffect, useEffectEvent, useMemo, useReducer, useRef } from 'react';
 import { RU_ALPHABET } from '../../core/alphabet.ts';
 import type { PlayView } from '../../core/puzzle/views.ts';
-import type { CheckResult } from '../game/gameState.ts';
+import type { CheckResult, GameNotice } from '../game/gameState.ts';
 import { createGameReducer, givenEntries, initialGameState } from '../game/gameState.ts';
 import { KeyStrip } from '../puzzle/KeyStrip.tsx';
 import { PuzzleGrid } from '../puzzle/PuzzleGrid.tsx';
@@ -15,6 +15,21 @@ export interface PlayPanelProps {
   readonly initialSolved?: boolean;
   readonly onCheck: (entries: Readonly<Record<number, string>>) => CheckResult;
   readonly onProgress?: (entries: Readonly<Record<number, string>>, solved: boolean) => void;
+}
+
+function noticeText(notice: GameNotice): string {
+  switch (notice.kind) {
+    case 'given-letter':
+      return `Буква «${notice.letter}» уже открыта под номером ${notice.number}: у разных номеров не может быть одинаковых букв.`;
+    case 'given-cell':
+      return `Номер ${notice.number} — стартовая буква «${notice.letter}», её нельзя изменить.`;
+    case 'moved':
+      return `Буква «${notice.letter}» перенесена с номера ${notice.from} на номер ${notice.to}: одна буква — один номер.`;
+  }
+}
+
+function noticeNumber(notice: GameNotice): number {
+  return notice.kind === 'moved' ? notice.from : notice.number;
 }
 
 const ARROWS: Record<string, [number, number]> = {
@@ -44,6 +59,7 @@ export function PlayPanel({ view, initialProgress, initialSolved = false, onChec
   const inputRef = useRef<HTMLInputElement>(null);
   const givenNumbers = useMemo(() => new Set(Object.keys(givenEntries(view)).map(Number)), [view]);
   const wrongNumbers = useMemo(() => new Set(state.check?.wrong ?? []), [state.check]);
+  const noticeNumbers = useMemo(() => new Set(state.notice ? [noticeNumber(state.notice)] : []), [state.notice]);
   const selectedCell = state.selected === null ? undefined : view.grid.cells[state.selected];
   const selectedNumber = selectedCell?.kind === 'letter' ? selectedCell.number : null;
 
@@ -93,8 +109,10 @@ export function PlayPanel({ view, initialProgress, initialSolved = false, onChec
         <span className={styles.progress}>
           Открыто букв: {filled} из {view.key.length}
         </span>
-        <p className={styles.status} role="status" aria-live="polite">
-          {check === null
+        <p className={state.notice ? `${styles.status} ${styles.notice}` : styles.status} role="status" aria-live="polite">
+          {state.notice
+            ? noticeText(state.notice)
+            : check === null
             ? state.solved
               ? 'Эта головоломка уже решена. Можно перепроверить или начать заново.'
               : 'Выберите клетку и печатайте буквы. Стрелки — переход, Backspace — стереть.'
@@ -129,6 +147,7 @@ export function PlayPanel({ view, initialProgress, initialSolved = false, onChec
             selected={state.selected}
             direction={state.direction}
             wrongNumbers={wrongNumbers}
+            noticeNumbers={noticeNumbers}
             onCellClick={handleCellClick}
           />
         }
@@ -138,6 +157,7 @@ export function PlayPanel({ view, initialProgress, initialSolved = false, onChec
             letters={state.entries}
             givenNumbers={givenNumbers}
             wrongNumbers={wrongNumbers}
+            noticeNumbers={noticeNumbers}
             selectedNumber={selectedNumber}
           />
         }

@@ -59,6 +59,10 @@
   fill: $color-heading;
 }
 
+.notice {
+  fill: $color-notice;
+}
+
 .interactive {
   cursor: pointer;
 }
@@ -67,7 +71,8 @@
   .sameNumber,
   .word,
   .selected,
-  .wrong {
+  .wrong,
+  .notice {
     fill: $color-cell;
   }
 

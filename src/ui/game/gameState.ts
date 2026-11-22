@@ -9,12 +9,18 @@ export interface CheckResult {
   readonly solved: boolean;
 }
 
+export type GameNotice =
+  | { readonly kind: 'given-letter'; readonly letter: string; readonly number: number }
+  | { readonly kind: 'moved'; readonly letter: string; readonly from: number; readonly to: number }
+  | { readonly kind: 'given-cell'; readonly letter: string; readonly number: number };
+
 export interface GameState {
   readonly entries: Readonly<Record<number, string>>;
   readonly selected: number | null;
   readonly direction: Direction;
   readonly check: CheckResult | null;
   readonly solved: boolean;
+  readonly notice: GameNotice | null;
 }
 
 export type GameAction =
@@ -46,13 +52,13 @@ export function initialGameState(
     usedLetters.add(letter);
     entries[number] = letter;
   }
-  return { entries: { ...entries, ...givens }, selected: null, direction: 'across', check: null, solved };
+  return { entries: { ...entries, ...givens }, selected: null, direction: 'across', check: null, solved, notice: null };
 }
 
 export function createGameReducer(view: PlayView, alphabet: Alphabet) {
   const { width, height, cells } = view.grid;
   const givens = givenEntries(view);
-  const givenLetters = new Set(Object.values(givens));
+  const givenNumberOf = new Map(Object.entries(givens).map(([number, letter]) => [letter, Number(number)]));
   const isLetter = (r: number, c: number) =>
     r >= 0 && c >= 0 && r < height && c < width && cells[r * width + c]?.kind === 'letter';
   const numberAt = (index: number) => {
@@ -88,7 +94,8 @@ export function createGameReducer(view: PlayView, alphabet: Alphabet) {
 
   const delta = (direction: Direction): [number, number] => (direction === 'across' ? [0, 1] : [1, 0]);
 
-  return (state: GameState, action: GameAction): GameState => {
+  return (previous: GameState, action: GameAction): GameState => {
+    const state = previous.notice ? { ...previous, notice: null } : previous;
     switch (action.type) {
       case 'select': {
         if (numberAt(action.index) === null) return state;
@@ -105,12 +112,28 @@ export function createGameReducer(view: PlayView, alphabet: Alphabet) {
         if (number === null || letter === null || letter.length !== 1) return state;
         const [dRow, dCol] = delta(state.direction);
         const next = step(state.selected, dRow, dCol) ?? state.selected;
-        if (givens[number] !== undefined) return { ...state, selected: next };
-        if (givenLetters.has(letter)) return state;
+        const givenHere = givens[number];
+        if (givenHere !== undefined) {
+          if (givenHere === letter) return { ...state, selected: next };
+          return { ...state, notice: { kind: 'given-cell', letter: givenHere, number } };
+        }
+        const givenNumber = givenNumberOf.get(letter);
+        if (givenNumber !== undefined) return { ...state, notice: { kind: 'given-letter', letter, number: givenNumber } };
+        let from: number | null = null;
         const entries: Record<number, string> = {};
-        for (const [key, value] of Object.entries(state.entries)) if (value !== letter) entries[Number(key)] = value;
+        for (const [key, value] of Object.entries(state.entries)) {
+          if (value === letter && Number(key) !== number) from = Number(key);
+          else if (value !== letter) entries[Number(key)] = value;
+        }
         entries[number] = letter;
-        return { ...state, entries, selected: next, check: null, solved: false };
+        return {
+          ...state,
+          entries,
+          selected: next,
+          check: null,
+          solved: false,
+          notice: from === null ? null : { kind: 'moved', letter, from, to: number },
+        };
       }
       case 'erase': {
         if (state.selected === null) return state;

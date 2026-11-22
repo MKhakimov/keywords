@@ -12,6 +12,7 @@ export interface PuzzleGridProps {
   readonly selected?: number | null;
   readonly direction?: Direction;
   readonly wrongNumbers?: ReadonlySet<number>;
+  readonly noticeNumbers?: ReadonlySet<number>;
   readonly onCellClick?: (index: number) => void;
 }
 
@@ -24,6 +25,7 @@ export function PuzzleGrid({
   selected = null,
   direction = 'across',
   wrongNumbers = EMPTY,
+  noticeNumbers = EMPTY,
   onCellClick,
 }: PuzzleGridProps) {
   const clipId = useId();
@@ -84,6 +86,7 @@ export function PuzzleGrid({
         if (activeWord.has(index)) classes.push(styles.word);
         if (selected === index) classes.push(styles.selected);
         if (wrongNumbers.has(cell.number)) classes.push(styles.wrong);
+        if (noticeNumbers.has(cell.number)) classes.push(styles.notice);
         return (
           <g
             key={index}

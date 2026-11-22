@@ -47,8 +47,18 @@
 .status {
   flex-basis: 100%;
   margin: 0;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: $radius;
   color: $app-text;
   font-size: 14px;
+}
+
+.notice {
+  border-color: #d9a521;
+  background: #fff3d6;
+  color: #6b4d00;
+  font-weight: 700;
 }
 
 @media print {

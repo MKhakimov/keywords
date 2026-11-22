@@ -72,6 +72,42 @@ describe('игровое состояние', () => {
     expect(reuse.entries[4]).toBeUndefined();
   });
 
+  it('сообщает, что буква уже открыта как стартовая, и не двигает курсор', () => {
+    const state = run(start, { type: 'select', index: cellIndex(0, 1) }, { type: 'input', letter: 'д' });
+    expect(state.notice).toEqual({ kind: 'given-letter', letter: 'Д', number: 1 });
+    expect(state.entries[4]).toBeUndefined();
+    expect(state.selected).toBe(cellIndex(0, 1));
+  });
+
+  it('сообщает о попытке изменить стартовую букву, а совпадающую просто пропускает', () => {
+    const selected = run(start, { type: 'select', index: cellIndex(0, 0) });
+    const changed = run(selected, { type: 'input', letter: 'К' });
+    expect(changed.notice).toEqual({ kind: 'given-cell', letter: 'Д', number: 1 });
+    expect(changed.selected).toBe(cellIndex(0, 0));
+    const same = run(selected, { type: 'input', letter: 'Д' });
+    expect(same.notice).toBeNull();
+    expect(same.selected).toBe(cellIndex(0, 1));
+  });
+
+  it('сообщает о переносе буквы с другого номера', () => {
+    const state = run(
+      start,
+      { type: 'select', index: cellIndex(0, 1) },
+      { type: 'input', letter: 'О' },
+      { type: 'select', index: cellIndex(2, 1) },
+      { type: 'input', letter: 'О' },
+    );
+    expect(state.notice).toEqual({ kind: 'moved', letter: 'О', from: 4, to: 7 });
+    const again = run(state, { type: 'select', index: cellIndex(2, 1) }, { type: 'input', letter: 'О' });
+    expect(again.notice).toBeNull();
+  });
+
+  it('снимает уведомление при следующем действии', () => {
+    const noticed = run(start, { type: 'select', index: cellIndex(0, 1) }, { type: 'input', letter: 'Д' });
+    expect(run(noticed, { type: 'move', dRow: 0, dCol: 1 }).notice).toBeNull();
+    expect(run(noticed, { type: 'erase' }).notice).toBeNull();
+  });
+
   it('снимает букву с прежнего номера, если её вписали в другой', () => {
     const state = run(
       start,

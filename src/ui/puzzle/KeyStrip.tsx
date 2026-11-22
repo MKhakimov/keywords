@@ -6,18 +6,27 @@ export interface KeyStripProps {
   readonly letters: Readonly<Record<number, string>>;
   readonly givenNumbers: ReadonlySet<number>;
   readonly wrongNumbers?: ReadonlySet<number>;
+  readonly noticeNumbers?: ReadonlySet<number>;
   readonly selectedNumber?: number | null;
 }
 
 const EMPTY = new Set<number>();
 
-export function KeyStrip({ entries, letters, givenNumbers, wrongNumbers = EMPTY, selectedNumber = null }: KeyStripProps) {
+export function KeyStrip({
+  entries,
+  letters,
+  givenNumbers,
+  wrongNumbers = EMPTY,
+  noticeNumbers = EMPTY,
+  selectedNumber = null,
+}: KeyStripProps) {
   return (
     <ol className={styles.strip} aria-label="Ключ: номер и буква">
       {entries.map(({ number }) => {
         const classes = [styles.item];
         if (selectedNumber === number) classes.push(styles.selected);
         if (wrongNumbers.has(number)) classes.push(styles.wrong);
+        if (noticeNumbers.has(number)) classes.push(styles.notice);
         const letter = letters[number];
         return (
           <li key={number} className={classes.join(' ')}>
