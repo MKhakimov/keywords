@@ -1,4 +1,5 @@
 import type { Difficulty, Puzzle } from '../core/puzzle/types.ts';
+import { isPuzzleShape } from './puzzleShape.ts';
 
 export const STORAGE_SCHEMA_VERSION = 1;
 
@@ -46,11 +47,8 @@ const isRecord = (value: unknown): value is Record<string, unknown> => typeof va
 export function isStoredPuzzle(value: unknown): value is StoredPuzzleRecord {
   if (!isRecord(value) || value.schemaVersion !== STORAGE_SCHEMA_VERSION) return false;
   if (typeof value.id !== 'string' || typeof value.createdAt !== 'string' || typeof value.updatedAt !== 'string') return false;
-  const puzzle = value.puzzle;
-  if (!isRecord(puzzle) || puzzle.schemaVersion !== 1) return false;
-  if (!isRecord(puzzle.meta) || puzzle.meta.id !== value.id) return false;
-  if (!isRecord(puzzle.editorial) || !isRecord(puzzle.grid) || !Array.isArray(puzzle.grid.cells)) return false;
-  return Array.isArray(puzzle.cipher) && Array.isArray(puzzle.words) && Array.isArray(puzzle.answerParts) && Array.isArray(puzzle.givens);
+  if (!isPuzzleShape(value.puzzle)) return false;
+  return value.puzzle.meta.id === value.id;
 }
 
 export function isStoredProgress(value: unknown): value is StoredProgressRecord {

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { PuzzleRequest } from '../../core/puzzle/generatePuzzle.ts';
 import type { Puzzle } from '../../core/puzzle/types.ts';
+import type { ValidationReport } from '../../core/validate/report.ts';
 import { GeneratorClient } from '../../worker/client.ts';
 
 export type GeneratorState =
@@ -32,5 +33,10 @@ export function usePuzzleGenerator() {
     return null;
   }, []);
 
-  return { state, generate };
+  const validate = useCallback((puzzle: Puzzle): Promise<ValidationReport> => {
+    clientRef.current ??= new GeneratorClient();
+    return clientRef.current.validate(puzzle);
+  }, []);
+
+  return { state, generate, validate };
 }

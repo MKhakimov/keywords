@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { RU_ALPHABET } from '../../core/alphabet.ts';
 import type { Puzzle } from '../../core/puzzle/types.ts';
+import type { ValidationReport } from '../../core/validate/report.ts';
+import { createExport, exportFileName, serializeExport } from '../../storage/exchange.ts';
+import type { ImportReport } from '../../storage/importPuzzles.ts';
+import { importPuzzles } from '../../storage/importPuzzles.ts';
 import { PuzzleRepository } from '../../storage/puzzleRepository.ts';
 import type { SavedPuzzle, SavedPuzzleSummary } from '../../storage/types.ts';
+import { downloadText } from './download.ts';
 
 const message = (error: unknown) => (error instanceof Error ? error.message : String(error));
 
@@ -93,5 +99,40 @@ export function useLibrary() {
     [repository, refresh],
   );
 
-  return { items, loaded, error, refresh, save, saveProgress, load, remove };
+  const exportPuzzles = useCallback(
+    async (id?: string) => {
+      try {
+        const records = id ? [await repository.get(id)].filter((r): r is SavedPuzzle => r !== null) : await repository.listRecords();
+        if (records.length === 0) {
+          setError('Нечего экспортировать');
+          return;
+        }
+        const now = new Date();
+        downloadText(exportFileName(records, now), serializeExport(createExport(records, now)));
+      } catch (e) {
+        setError(`Не удалось экспортировать: ${message(e)}`);
+      }
+    },
+    [repository],
+  );
+
+  const importFile = useCallback(
+    async (file: File, validate: (puzzle: Puzzle) => Promise<ValidationReport>): Promise<ImportReport | null> => {
+      try {
+        const report = await importPuzzles(await file.text(), {
+          alphabetId: RU_ALPHABET.id,
+          validate,
+          store: (item) => repository.importItem(item),
+        });
+        await refresh();
+        return report;
+      } catch (e) {
+        setError(`Не удалось импортировать «${file.name}»: ${message(e)}`);
+        return null;
+      }
+    },
+    [repository, refresh],
+  );
+
+  return { items, loaded, error, refresh, save, saveProgress, load, remove, exportPuzzles, importFile };
 }

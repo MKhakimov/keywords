@@ -1,10 +1,16 @@
 import type { GenerateResult, PuzzleRequest } from '../core/puzzle/generatePuzzle.ts';
-import type { GenerateMessage, WorkerResponse } from './protocol.ts';
+import type { Puzzle } from '../core/puzzle/types.ts';
+import type { ValidationReport } from '../core/validate/report.ts';
+import type { WorkerRequest, WorkerResponse } from './protocol.ts';
+
+type Settled = Exclude<WorkerResponse, { type: 'error' }>;
 
 interface Pending {
-  resolve: (result: GenerateResult) => void;
+  resolve: (response: Settled) => void;
   reject: (error: Error) => void;
 }
+
+type RequestBody = WorkerRequest extends infer R ? (R extends WorkerRequest ? Omit<R, 'id'> : never) : never;
 
 export class GeneratorClient {
   private worker: Worker | null = null;
@@ -19,8 +25,8 @@ export class GeneratorClient {
       const pending = this.pending.get(message.id);
       if (!pending) return;
       this.pending.delete(message.id);
-      if (message.type === 'result') pending.resolve(message.result);
-      else pending.reject(new Error(message.message));
+      if (message.type === 'error') pending.reject(new Error(message.message));
+      else pending.resolve(message);
     });
     worker.addEventListener('error', (event) => {
       const error = new Error(event.message || 'Ошибка в генераторе');
@@ -32,14 +38,25 @@ export class GeneratorClient {
     return worker;
   }
 
-  generate(request: PuzzleRequest): Promise<GenerateResult> {
+  private send(body: RequestBody): Promise<Settled> {
     const id = this.nextId;
     this.nextId += 1;
-    const message: GenerateMessage = { type: 'generate', id, request };
     return new Promise((resolve, reject) => {
       this.pending.set(id, { resolve, reject });
-      this.ensureWorker().postMessage(message);
+      this.ensureWorker().postMessage({ ...body, id } as WorkerRequest);
     });
+  }
+
+  async generate(request: PuzzleRequest): Promise<GenerateResult> {
+    const response = await this.send({ type: 'generate', request });
+    if (response.type !== 'result') throw new Error('Неожиданный ответ генератора');
+    return response.result;
+  }
+
+  async validate(puzzle: Puzzle): Promise<ValidationReport> {
+    const response = await this.send({ type: 'validate', puzzle });
+    if (response.type !== 'validated') throw new Error('Неожиданный ответ генератора');
+    return response.report;
   }
 
   terminate(): void {

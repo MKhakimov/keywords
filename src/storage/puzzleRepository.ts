@@ -1,4 +1,5 @@
 import type { Puzzle } from '../core/puzzle/types.ts';
+import type { ExportItem } from './exchange.ts';
 import type { SavedPuzzle, SavedPuzzleSummary, StoredProgressRecord, StoredPuzzleRecord } from './types.ts';
 import { STORAGE_SCHEMA_VERSION, isStoredProgress, isStoredPuzzle, joinRecords, summarize } from './types.ts';
 
@@ -118,6 +119,52 @@ export class PuzzleRepository {
       .filter(isStoredPuzzle)
       .map((p) => summarize(joinRecords(p, progressById.get(p.id) ?? null)))
       .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  }
+
+  async listRecords(): Promise<SavedPuzzle[]> {
+    const db = await this.open();
+    const tx = db.transaction([PUZZLES, PROGRESS], 'readonly');
+    const [puzzles, progress] = await Promise.all([
+      request<unknown[]>(tx.objectStore(PUZZLES).getAll()),
+      request<unknown[]>(tx.objectStore(PROGRESS).getAll()),
+    ]);
+    const progressById = new Map(progress.filter(isStoredProgress).map((p) => [p.id, p]));
+    return puzzles
+      .filter(isStoredPuzzle)
+      .map((p) => joinRecords(p, progressById.get(p.id) ?? null))
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  }
+
+  async importItem(item: ExportItem): Promise<'added' | 'exists'> {
+    const db = await this.open();
+    const id = item.puzzle.meta.id;
+    const tx = db.transaction([PUZZLES, PROGRESS], 'readwrite');
+    const key: unknown = await request(tx.objectStore(PUZZLES).getKey(id));
+    if (key !== undefined) {
+      tx.abort();
+      return 'exists';
+    }
+    const timestamp = this.now().toISOString();
+    const record: StoredPuzzleRecord = {
+      schemaVersion: STORAGE_SCHEMA_VERSION,
+      id,
+      puzzle: item.puzzle,
+      createdAt: item.createdAt,
+      updatedAt: timestamp,
+    };
+    tx.objectStore(PUZZLES).put(record);
+    if (item.solved || Object.keys(item.progress).length > 0) {
+      const progress: StoredProgressRecord = {
+        schemaVersion: STORAGE_SCHEMA_VERSION,
+        id,
+        progress: { ...item.progress },
+        solved: item.solved,
+        updatedAt: timestamp,
+      };
+      tx.objectStore(PROGRESS).put(progress);
+    }
+    await done(tx);
+    return 'added';
   }
 
   async delete(id: string): Promise<void> {

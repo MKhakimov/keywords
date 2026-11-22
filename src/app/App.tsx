@@ -50,7 +50,7 @@ export function App() {
   const [tab, setTab] = useState<Tab>('create');
   const [formValues, setFormValues] = useState<PuzzleFormValues>(defaultFormValues);
   const [current, setCurrent] = useState<CurrentPuzzle | null>(null);
-  const { state, generate } = usePuzzleGenerator();
+  const { state, generate, validate } = usePuzzleGenerator();
   const library = useLibrary();
   const view = useMemo(() => (current ? toPlayView(current.puzzle) : null), [current]);
 
@@ -129,6 +129,8 @@ export function App() {
             onOpen={handleOpen}
             onDelete={handleDelete}
             onCreate={() => setTab('create')}
+            onExport={(id) => void library.exportPuzzles(id)}
+            onImport={(file) => library.importFile(file, validate)}
           />
         )}
         {tab === 'play' && current && view && (
