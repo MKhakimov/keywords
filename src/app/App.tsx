@@ -6,6 +6,7 @@ import { CreateForm } from '../ui/create/CreateForm.tsx';
 import type { PuzzleFormValues } from '../ui/create/formModel.ts';
 import { buildRequest, defaultFormValues } from '../ui/create/formModel.ts';
 import { EditorPanel } from '../ui/editor/EditorPanel.tsx';
+import { replaceIllustration } from '../ui/editor/illustration.ts';
 import { checkSolution } from '../ui/game/checkSolution.ts';
 import { givenEntries } from '../ui/game/gameState.ts';
 import { usePuzzleGenerator } from '../ui/hooks/usePuzzleGenerator.ts';
@@ -146,7 +147,18 @@ export function App() {
             }}
           />
         )}
-        {tab === 'editor' && current && <EditorPanel puzzle={current.puzzle} />}
+        {tab === 'editor' && current && (
+          <EditorPanel
+            puzzle={current.puzzle}
+            onIllustrationChange={async (patch) => {
+              const updated = replaceIllustration(current.puzzle, patch);
+              const saved = await library.save(updated);
+              if (!saved) return false;
+              setCurrent((prev) => (prev && prev.puzzle.meta.id === updated.meta.id ? { ...prev, puzzle: updated } : prev));
+              return true;
+            }}
+          />
+        )}
       </main>
 
       {current && (

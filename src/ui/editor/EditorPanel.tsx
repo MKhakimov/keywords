@@ -4,16 +4,19 @@ import { toPlayView } from '../../core/puzzle/views.ts';
 import { KeyStrip } from '../puzzle/KeyStrip.tsx';
 import { PuzzleGrid } from '../puzzle/PuzzleGrid.tsx';
 import { PuzzlePage } from '../puzzle/PuzzlePage.tsx';
+import type { Illustration } from './illustration.ts';
+import { IllustrationEditor } from './IllustrationEditor.tsx';
 import styles from './EditorPanel.module.scss';
 
 export interface EditorPanelProps {
   readonly puzzle: Puzzle;
+  readonly onIllustrationChange?: (patch: Partial<Illustration>) => Promise<boolean>;
 }
 
 const DIRECTION_LABEL = { across: 'по горизонтали', down: 'по вертикали' } as const;
 const STATUS_LABEL = { passed: '✓', failed: '✗', skipped: '—' } as const;
 
-export function EditorPanel({ puzzle }: EditorPanelProps) {
+export function EditorPanel({ puzzle, onIllustrationChange }: EditorPanelProps) {
   const view = useMemo(() => toPlayView(puzzle), [puzzle]);
   const solution = useMemo(() => Object.fromEntries(puzzle.cipher.map((e) => [e.number, e.letter])), [puzzle]);
   const givenNumbers = useMemo(() => new Set(puzzle.givens), [puzzle]);
@@ -32,6 +35,10 @@ export function EditorPanel({ puzzle }: EditorPanelProps) {
       />
 
       <aside className={styles.side} aria-label="Редакторские данные">
+        {onIllustrationChange && (
+          <IllustrationEditor key={puzzle.meta.id} illustration={puzzle.illustration} onChange={onIllustrationChange} />
+        )}
+
         <section className={styles.section}>
           <h2>Ответ</h2>
           <p className={styles.answer}>{puzzle.answerParts.map((p) => p.text).join(' ')}</p>

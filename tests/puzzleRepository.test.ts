@@ -73,6 +73,20 @@ describe('PuzzleRepository', () => {
     expect(resaved.createdAt).toBe(created.createdAt);
   });
 
+  it('замена иллюстрации сохраняет прогресс, дату создания и сетку', async () => {
+    const puzzle = makePuzzle('a', 'Первая');
+    const created = await repo.save(puzzle);
+    await repo.saveProgress('a', { 4: 'О' }, false);
+    const updated = { ...puzzle, illustration: { ...puzzle.illustration, src: 'data:image/png;base64,BBBB', alt: 'новая' } };
+    await repo.save(updated);
+
+    const loaded = await repo.get('a');
+    expect(loaded?.puzzle.illustration.src).toBe('data:image/png;base64,BBBB');
+    expect(loaded?.puzzle.grid).toEqual(puzzle.grid);
+    expect(loaded?.progress).toEqual({ 4: 'О' });
+    expect(loaded?.createdAt).toBe(created.createdAt);
+  });
+
   it('удаляет запись', async () => {
     await repo.save(makePuzzle('a', 'Первая'));
     await repo.delete('a');

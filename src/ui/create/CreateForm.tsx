@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Difficulty } from '../../core/puzzle/types.ts';
 import type { PuzzleFormValues } from './formModel.ts';
 import { GRID_LIMITS, PLACEHOLDER_ILLUSTRATION, randomSeed, validateForm } from './formModel.ts';
+import { readImageFile } from '../shared/readImage.ts';
 import styles from './CreateForm.module.scss';
 
 export interface CreateFormProps {
@@ -21,6 +22,7 @@ const DIFFICULTIES: { value: Difficulty; label: string }[] = [
 export function CreateForm({ initialValues, busy, error, onSubmit }: CreateFormProps) {
   const [values, setValues] = useState(initialValues);
   const [touched, setTouched] = useState(false);
+  const [imageError, setImageError] = useState<string | null>(null);
   const errors = validateForm(values);
   const hasErrors = Object.keys(errors).length > 0;
 
@@ -33,18 +35,19 @@ export function CreateForm({ initialValues, busy, error, onSubmit }: CreateFormP
 
   const handleFile = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
+    event.target.value = '';
     if (!file) return;
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      if (typeof reader.result !== 'string') return;
-      setValues((current) => ({
-        ...current,
-        illustrationSrc: reader.result as string,
-        illustrationPlaceholder: false,
-        illustrationAlt: current.illustrationPlaceholder ? '' : current.illustrationAlt,
-      }));
-    });
-    reader.readAsDataURL(file);
+    readImageFile(file)
+      .then((src) => {
+        setImageError(null);
+        setValues((current) => ({
+          ...current,
+          illustrationSrc: src,
+          illustrationPlaceholder: false,
+          illustrationAlt: current.illustrationPlaceholder ? '' : current.illustrationAlt,
+        }));
+      })
+      .catch((error: unknown) => setImageError(error instanceof Error ? error.message : String(error)));
   };
 
   const handleSubmit = (event: FormEvent) => {
@@ -150,6 +153,7 @@ export function CreateForm({ initialValues, busy, error, onSubmit }: CreateFormP
             <label className={styles.field}>
               <span>Файл изображения</span>
               <input type="file" accept="image/*" onChange={handleFile} />
+              {imageError && <span className={styles.error}>{imageError}</span>}
             </label>
             {!values.illustrationPlaceholder && (
               <button
