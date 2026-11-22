@@ -81,9 +81,15 @@ export function generateGrid(config: GridConfig, dictionary: Dictionary): GridRe
       throw error;
     }
 
+    const relaxation = Math.max(0, 1 - (attempt - 1) / Math.max(1, config.maxAttempts / 2));
     const kinds = generateTemplate(
       layout,
-      { minWordLength: config.minWordLength, maxWordLength: config.maxWordLength, extraBreakChance: config.extraBreakChance, densifyChance: config.densifyChance },
+      {
+        minWordLength: config.minWordLength,
+        maxWordLength: config.maxWordLength,
+        extraBreakChance: config.extraBreakChance,
+        densifyChance: config.densifyChance * relaxation,
+      },
       attemptRng,
     );
     if (!kinds) {

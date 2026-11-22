@@ -156,7 +156,7 @@ export function validatePuzzle(puzzle: Puzzle, options: ValidateOptions): Valida
     fail('cipher-contiguous', `Номера шифра должны идти 1…${numbers.length}`);
   }
 
-  const minOccurrences = options.minNumberOccurrences ?? 2;
+  const minOccurrences = options.minNumberOccurrences ?? 1;
   for (const [number, count] of occurrences) {
     if (count < minOccurrences) fail('numbers-repeat', `Номер ${number} встречается ${count} раз(а), нужно не меньше ${minOccurrences}`);
   }
