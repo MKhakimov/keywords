@@ -1,20 +1,20 @@
 {
   "format": "keywords-export",
   "version": 1,
-  "exportedAt": "2026-11-22T08:30:23.305Z",
+  "exportedAt": "2026-11-23T05:17:51.220Z",
   "items": [
     {
       "puzzle": {
         "schemaVersion": 1,
         "meta": {
-          "id": "f7a4bc5d-af0e-40ce-add5-6046c5c9aa10",
+          "id": "1615d1d0-c08d-4732-82e3-97e643bfec14",
           "title": "Остров на пути к Салтану",
           "theme": "А.С. Пушкин",
           "difficulty": "hard",
           "language": "ru",
           "alphabet": "ru-32",
           "seed": 1023,
-          "createdAt": "2026-11-22T08:30:23.305Z"
+          "createdAt": "2026-11-23T05:17:51.220Z"
         },
         "editorial": {
           "rubric": "Пушкинская география",
@@ -2299,7 +2299,7 @@
       },
       "progress": {},
       "solved": false,
-      "createdAt": "2026-11-22T08:30:23.305Z"
+      "createdAt": "2026-11-23T05:17:51.220Z"
     }
   ]
 }
